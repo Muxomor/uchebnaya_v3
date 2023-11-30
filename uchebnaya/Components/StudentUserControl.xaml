@@ -14,7 +14,7 @@
             </StackPanel>
             <StackPanel Orientation="Vertical">
                 <TextBlock>Оценка</TextBlock>
-                <TextBlock Text="{Binding ex}"></TextBlock>
+                <TextBlock Text="{Binding exam_ocenka}"></TextBlock>
             </StackPanel>
         </StackPanel>
     </Grid>
