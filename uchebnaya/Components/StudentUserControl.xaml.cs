@@ -20,9 +20,32 @@ namespace uchebnaya.Components
     /// </summary>
     public partial class StudentUserControl : UserControl
     {
-        public StudentUserControl()
+        ExamStudent exStudent;
+        public StudentUserControl(ExamStudent exStudent)
         {
             InitializeComponent();
+            this.exStudent = exStudent;
+            this.DataContext = exStudent;
+        }
+
+        private void OcenkaTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(OcenkaTB.Text.Length > 0)
+            {
+                exStudent.exam_ocenka = Convert.ToInt32(OcenkaTB.Text);
+            }
+            else
+            {
+                exStudent.exam_ocenka = null;
+            }
+        }
+
+        private void OcenkaTB_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!char.IsDigit(e.Text[0])|| Convert.ToInt32(e.Text)<1||Convert.ToInt32(e.Text)>5)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
