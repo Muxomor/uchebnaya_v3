@@ -12,20 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using uchebnaya.Pages;
 
-namespace uchebnaya
+namespace uchebnaya.Components
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для StudentUserControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StudentUserControl : UserControl
     {
-        public MainWindow()
+        public StudentUserControl()
         {
             InitializeComponent();
-            App.mainWindow = this;
-            MainWindowFrame.NavigationService.Navigate(new Uri("Pages/AuthPage.xaml", UriKind.Relative));
         }
     }
 }

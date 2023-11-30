@@ -12,20 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using uchebnaya.Pages;
 
-namespace uchebnaya
+namespace uchebnaya.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для GuestPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GuestPage : Page
     {
-        public MainWindow()
+        public GuestPage()
         {
             InitializeComponent();
-            App.mainWindow = this;
-            MainWindowFrame.NavigationService.Navigate(new Uri("Pages/AuthPage.xaml", UriKind.Relative));
+            DisciplinaLV.ItemsSource=App.db.disciplina.ToList();
         }
     }
 }

@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="uchebnaya.Components.KafedraUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:uchebnaya.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="400">
+    <Border Margin="5" BorderBrush="Black" BorderThickness="2">
+        <Grid  Width="200" Height="150" Margin="10">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Шифр кафедры:</TextBlock>
+                    <TextBlock Margin="5 0" Name="kafedraShifrTB"></TextBlock>
+                </StackPanel>
+                <StackPanel Margin="0 10" Orientation="Horizontal">
+                    <TextBlock>Название кафедры:</TextBlock>
+                    <TextBlock Width="90" TextWrapping="Wrap" Margin="5 0" Name="kafedraNameTB"></TextBlock>
+                </StackPanel>
+                <StackPanel Margin="0 10" Orientation="Horizontal">
+                    <TextBlock>аббр. факультета:</TextBlock>
+                    <TextBlock Margin="5 0" Name="facultetAbrTB"></TextBlock>
+                </StackPanel>
+                <Button x:Name="editBtn" Width="80" Click="EditBtn_Click">Изменить</Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>
