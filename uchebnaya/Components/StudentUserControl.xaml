@@ -7,16 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Border Margin="5" BorderBrush="Beige" BorderThickness="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Margin="0 0 10 0" Orientation="Vertical">
                 <TextBlock>Студент</TextBlock>
                 <TextBlock Name="studentNameTb" Width="80" TextWrapping="Wrap" Text="{Binding student.student_name}"></TextBlock>
             </StackPanel>
-            <StackPanel Orientation="Vertical">
-                <TextBlock>Оценка</TextBlock>
-                <TextBox Width="20" MaxLength="1" Name="OcenkaTB" Text="{Binding exam_ocenka}" TextChanged="OcenkaTB_TextChanged" PreviewTextInput="OcenkaTB_PreviewTextInput"></TextBox>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock>Оценка</TextBlock>
+                    <TextBox Width="20" MaxLength="1" Name="OcenkaTB" Text="{Binding exam_ocenka}" TextChanged="OcenkaTB_TextChanged" PreviewTextInput="OcenkaTB_PreviewTextInput"></TextBox>
+                </StackPanel>
             </StackPanel>
-            
-        </StackPanel>
+        </Border>
     </Grid>
 </UserControl>

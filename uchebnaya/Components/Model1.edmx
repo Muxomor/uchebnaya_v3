@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище shamaev322_uchebnaya_v2Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище shamaev322_uchebnaya_v2Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="disciplina">
           <Key>
             <PropertyRef Name="disciplina_id" />
@@ -187,6 +187,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ExamStudent_student">
+          <End Role="student" Type="Self.student" Multiplicity="0..1" />
+          <End Role="ExamStudent" Type="Self.ExamStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="student">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="ExamStudent">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Kafedra_Faculty">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="Kafedra" Type="Self.Kafedra" Multiplicity="*" />
@@ -285,6 +297,10 @@
             <End Role="exam" EntitySet="exam" />
             <End Role="ExamStudent" EntitySet="ExamStudent" />
           </AssociationSet>
+          <AssociationSet Name="FK_ExamStudent_student" Association="Self.FK_ExamStudent_student">
+            <End Role="student" EntitySet="student" />
+            <End Role="ExamStudent" EntitySet="ExamStudent" />
+          </AssociationSet>
           <AssociationSet Name="FK_Kafedra_Faculty" Association="Self.FK_Kafedra_Faculty">
             <End Role="Faculty" EntitySet="Faculty" />
             <End Role="Kafedra" EntitySet="Kafedra" />
@@ -306,8 +322,7 @@
             <End Role="zayavka" EntitySet="zayavka" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="shamaev322_uchebnaya_v2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -367,6 +382,7 @@
           <Property Name="exam_ocenka" Type="Int32" />
           <Property Name="exam_id" Type="Int32" />
           <NavigationProperty Name="exam" Relationship="Self.FK_ExamStudent_exam" FromRole="ExamStudent" ToRole="exam" />
+          <NavigationProperty Name="student" Relationship="shamaev322_uchebnaya_v2Model.FK_ExamStudent_student" FromRole="ExamStudent" ToRole="student" />
         </EntityType>
         <EntityType Name="Faculty">
           <Key>
@@ -415,6 +431,7 @@
           <Property Name="spec_id" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="student_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="specialization" Relationship="Self.FK_student_specialization" FromRole="student" ToRole="specialization" />
+          <NavigationProperty Name="ExamStudent" Relationship="shamaev322_uchebnaya_v2Model.FK_ExamStudent_student" FromRole="student" ToRole="ExamStudent" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -633,7 +650,23 @@
             <End Role="specialization" EntitySet="specialization" />
             <End Role="student" EntitySet="student" />
           </AssociationSet>
+          <AssociationSet Name="FK_ExamStudent_student" Association="shamaev322_uchebnaya_v2Model.FK_ExamStudent_student">
+            <End Role="student" EntitySet="student" />
+            <End Role="ExamStudent" EntitySet="ExamStudent" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_ExamStudent_student">
+          <End Type="shamaev322_uchebnaya_v2Model.student" Role="student" Multiplicity="0..1" />
+          <End Type="shamaev322_uchebnaya_v2Model.ExamStudent" Role="ExamStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="student">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="ExamStudent">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

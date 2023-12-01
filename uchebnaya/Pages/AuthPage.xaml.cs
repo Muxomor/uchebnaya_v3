@@ -24,6 +24,7 @@ namespace uchebnaya.Pages
         public AuthPage()
         {
             InitializeComponent();
+            loginTB.Focus();
         }
 
         private void AuthBtn_Click(object sender, RoutedEventArgs e)
@@ -36,6 +37,7 @@ namespace uchebnaya.Pages
                     if (empPosition=="преподаватель")
                     {
                         MessageBox.Show($"Вы успешно вошли как {empPosition}");
+                        App.mainWindow.MainWindowFrame.Navigate(new ExamListPage());
                     }
                     else if(empPosition== "зав. кафедрой")
                     {

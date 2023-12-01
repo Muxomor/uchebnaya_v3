@@ -33,6 +33,7 @@ namespace uchebnaya.Components
             if(OcenkaTB.Text.Length > 0)
             {
                 exStudent.exam_ocenka = Convert.ToInt32(OcenkaTB.Text);
+                App.db.SaveChanges();
             }
             else
             {

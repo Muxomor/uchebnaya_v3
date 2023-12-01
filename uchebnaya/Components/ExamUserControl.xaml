@@ -8,45 +8,49 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Border Margin="10" BorderBrush="Black" BorderThickness="2">
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15">
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel Orientation="Vertical" Margin="0 0 15 0">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
-                            <TextBlock>Код дисциплины</TextBlock>
-                            <TextBlock x:Name="DisciplinaKodTb" Margin="10 0 0 0" Width="100" Text="{Binding Disciplina_Kod}"></TextBlock>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
-                            <TextBlock>Код преподавателя</TextBlock>
-                            <TextBlock x:Name="PrepodavatelKodTb" Margin="10 0 0 0" Width="100" Text="{Binding Prepodovatel_TabNomer}"></TextBlock>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 5 0 0">
-                            <TextBlock>Аудитория</TextBlock>
-                            <TextBlock x:Name="AuditoryTb" Margin="10 0 0 0" Width="100" Text="{Binding Auditoria}"></TextBlock>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <TextBlock>Дата экзамена</TextBlock>
-                            <DatePickerTextBox x:Name="ExamDateDptb" IsReadOnly="True" Margin="10 0 0 0" Text="{Binding ExamenDate}"></DatePickerTextBox>
-                        </StackPanel>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock>Дисциплина</TextBlock>
+                        <TextBlock Margin="0 5" Text="{Binding disciplina_id}"></TextBlock>
                     </StackPanel>
-                    <StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
-                            <TextBlock>Фамилия по:</TextBlock>
-                            <ComboBox Width="100" Margin="5 0 0 0" x:Name="FamiliaSortCb" SelectionChanged="FamiliaSortCb_SelectionChanged">
-                                <ComboBoxItem>По умолч.</ComboBoxItem>
-                                <ComboBoxItem>От А до Я</ComboBoxItem>
-                                <ComboBoxItem>От Я до А</ComboBoxItem>
-                            </ComboBox>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
-                            <TextBlock>Поиск:</TextBlock>
-                            <TextBox x:Name="SearchTb" Width="100" Margin="5 0 0 0" TextChanged="SearchTb_TextChanged"></TextBox>
-                        </StackPanel>
-                        <ScrollViewer Height="100" Margin="0 5 0 0">
-                            <WrapPanel HorizontalAlignment="Center" x:Name="StudentsWp" Orientation="Vertical"></WrapPanel>
-                        </ScrollViewer>
+                    <StackPanel Margin="10 0" Orientation="Vertical">
+                        <TextBlock>Дата экзамена</TextBlock>
+                        <DatePicker Margin="0 5" IsEnabled="False" SelectedDate="{Binding exam_date}"></DatePicker>
                     </StackPanel>
-                    <Button Width="150" Margin="0 10 0 0" x:Name="AddStudent" Click="AddStudent_Click">Добавить студента</Button>
+                    <StackPanel Margin="10 0" Orientation="Vertical">
+                        <TextBlock>Преподаватель</TextBlock>
+                        <TextBlock Margin="0 5" Text="{Binding prepod_id}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Margin="10 0" Orientation="Vertical">
+                        <TextBlock>Аудитория</TextBlock>
+                        <TextBlock Margin="0 5" Text="{Binding exam_auditoriya}"></TextBlock>
+                    </StackPanel>
                 </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    
+                    
+                
+                <StackPanel HorizontalAlignment="Left" Margin="3" Width="130" Orientation="Vertical">
+                   <TextBlock>Сортировать по имени</TextBlock>
+                <ComboBox Name="StudentSortCB" SelectionChanged="StudentSortCB_SelectionChanged">
+                    <ComboBoxItem>По умолчанию</ComboBoxItem>
+                    <ComboBoxItem>От А до Я</ComboBoxItem>
+                    <ComboBoxItem>От Я до А</ComboBoxItem>
+                </ComboBox> 
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="3">
+                        <TextBlock>Поиск по имени</TextBlock>
+                        <TextBox Name="StudentSearchTB" TextChanged="StudentSearchTB_TextChanged"></TextBox>
+                </StackPanel>
+                </StackPanel>
+                
+                <Border BorderBrush="Black" BorderThickness="1">
+                    <ScrollViewer Height="100" Width="400">
+                    <WrapPanel Name="StudnetsWP"></WrapPanel>
+                </ScrollViewer>
+                </Border>
+                <Button Name="AddStudentBtn" Margin="10 5" Height="20" Width="120" Click="AddStudentBtn_Click">Добавить студента</Button>
             </StackPanel>
         </Border>
     </Grid>

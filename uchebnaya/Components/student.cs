@@ -14,10 +14,18 @@ namespace uchebnaya.Components
     
     public partial class student
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public student()
+        {
+            this.ExamStudent = new HashSet<ExamStudent>();
+        }
+    
         public int student_id { get; set; }
         public string spec_id { get; set; }
         public string student_name { get; set; }
     
         public virtual specialization specialization { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ExamStudent> ExamStudent { get; set; }
     }
 }

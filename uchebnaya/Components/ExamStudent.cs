@@ -20,5 +20,6 @@ namespace uchebnaya.Components
         public Nullable<int> exam_id { get; set; }
     
         public virtual exam exam { get; set; }
+        public virtual student student { get; set; }
     }
 }

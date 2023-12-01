@@ -29,6 +29,7 @@
         <AssociationConnector Association="shamaev322_uchebnaya_v2Model.FK_Kafedra_Faculty" ManuallyRouted="false" />
         <AssociationConnector Association="shamaev322_uchebnaya_v2Model.FK_specialization_Kafedra" ManuallyRouted="false" />
         <AssociationConnector Association="shamaev322_uchebnaya_v2Model.FK_student_specialization" ManuallyRouted="false" />
+        <AssociationConnector Association="shamaev322_uchebnaya_v2Model.FK_ExamStudent_student" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
