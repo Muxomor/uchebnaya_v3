@@ -9,6 +9,27 @@
       Title="EmployeeListPage">
 
     <Grid>
-        
+        <StackPanel VerticalAlignment="Top" Height="80" Orientation="Horizontal">
+            <StackPanel Margin="5" Orientation="Vertical">
+                <TextBlock>Сортировать</TextBlock>
+                <ComboBox Width="100" Name="empNameSortCB" SelectionChanged="empNameSortCB_SelectionChanged">
+                    <ComboBoxItem>По умолчанию</ComboBoxItem>
+                    <ComboBoxItem>От А до Я</ComboBoxItem>
+                    <ComboBoxItem>От Я до А</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Vertical">
+                <TextBlock>Поиск по имени</TextBlock>
+                <TextBox Height="22" Name="empSearchTB" TextChanged="empSearchTB_TextChanged"></TextBox>
+            </StackPanel>
+        </StackPanel>
+
+
+        <StackPanel Margin="0 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="700" Height="300">
+            <ScrollViewer Height="300">
+                <WrapPanel Name="empWP"></WrapPanel>
+            </ScrollViewer>
+        </StackPanel>
+        <Button Name="AddEmpBtn" VerticalAlignment="Bottom" Margin="0 0 0 10" Height="20" Width="150" Click="AddEmpBtn_Click">Добавить сотдрудника</Button>
     </Grid>
 </Page>

@@ -41,9 +41,13 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -64,6 +68,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Components\EmployeeUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Components\ExamUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,6 +97,9 @@
     </Compile>
     <Compile Include="Components\employee.cs">
       <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Components\EmployeeUserControl.xaml.cs">
+      <DependentUpon>EmployeeUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\engineer.cs">
       <DependentUpon>Model2.tt</DependentUpon>
@@ -170,6 +181,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AddOrRedactEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddOrRedactKafedra.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -198,6 +213,9 @@
   <ItemGroup>
     <Compile Include="Pages\AddExamStudent.xaml.cs">
       <DependentUpon>AddExamStudent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddOrRedactEmployee.xaml.cs">
+      <DependentUpon>AddOrRedactEmployee.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AddOrRedactKafedra.xaml.cs">
       <DependentUpon>AddOrRedactKafedra.xaml</DependentUpon>
