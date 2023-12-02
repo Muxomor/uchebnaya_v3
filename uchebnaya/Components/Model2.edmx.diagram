@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="96fb48d8d4404d9d80d919154edcc03c" Name="Diagram1">
+        <EntityTypeShape EntityType="shamaev322_uchebnaya_v2Model2.disciplina" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="shamaev322_uchebnaya_v2Model2.employee" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="shamaev322_uchebnaya_v2Model2.engineer" Width="1.5" PointX="7.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="shamaev322_uchebnaya_v2Model2.exam" Width="1.5" PointX="7.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="shamaev322_uchebnaya_v2Model2.ExamStudent" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="shamaev322_uchebnaya_v2Model2.Faculty" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="shamaev322_uchebnaya_v2Model2.Kafedra" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="shamaev322_uchebnaya_v2Model2.prepod" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="shamaev322_uchebnaya_v2Model2.specialization" Width="1.5" PointX="5.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="shamaev322_uchebnaya_v2Model2.student" Width="1.5" PointX="7.5" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="shamaev322_uchebnaya_v2Model2.zav_kafedri" Width="1.5" PointX="7.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="shamaev322_uchebnaya_v2Model2.zayavka" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="shamaev322_uchebnaya_v2Model2.FK_disciplina_Kafedra" ManuallyRouted="false" />
+        <AssociationConnector Association="shamaev322_uchebnaya_v2Model2.FK_exam_disciplina" ManuallyRouted="false" />
+        <AssociationConnector Association="shamaev322_uchebnaya_v2Model2.FK_zayavka_disciplina" ManuallyRouted="false" />
+        <AssociationConnector Association="shamaev322_uchebnaya_v2Model2.FK_employee_Kafedra" ManuallyRouted="false" />
+        <AssociationConnector Association="shamaev322_uchebnaya_v2Model2.FK_engineer_employee" ManuallyRouted="false" />
+        <AssociationConnector Association="shamaev322_uchebnaya_v2Model2.FK_zav_kafedri_employee" ManuallyRouted="false" />
+        <AssociationConnector Association="shamaev322_uchebnaya_v2Model2.FK_exam_prepod" ManuallyRouted="false" />
+        <AssociationConnector Association="shamaev322_uchebnaya_v2Model2.FK_ExamStudent_exam" ManuallyRouted="false" />
+        <AssociationConnector Association="shamaev322_uchebnaya_v2Model2.FK_ExamStudent_student" ManuallyRouted="false" />
+        <AssociationConnector Association="shamaev322_uchebnaya_v2Model2.FK_Kafedra_Faculty" ManuallyRouted="false" />
+        <AssociationConnector Association="shamaev322_uchebnaya_v2Model2.FK_specialization_Kafedra" ManuallyRouted="false" />
+        <AssociationConnector Association="shamaev322_uchebnaya_v2Model2.FK_student_specialization" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

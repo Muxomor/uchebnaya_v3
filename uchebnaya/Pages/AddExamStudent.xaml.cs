@@ -31,7 +31,6 @@ namespace uchebnaya.Pages
             student[] selectedStudents = App.db.ExamStudent.Where(x => x.exam_id == exam_student.exam_id).Select(x => x.student).ToArray();
             studentNameCb.ItemsSource = App.db.student.ToArray().Except(selectedStudents).ToArray();
         }
-
         private void OcenkaTB_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (OcenkaTB.Text.Length > 0)
@@ -42,7 +41,6 @@ namespace uchebnaya.Pages
             {
                 exam_student.exam_ocenka = null;
             }
-
         }
         private void OcenkaTB_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {

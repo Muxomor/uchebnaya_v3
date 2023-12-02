@@ -24,8 +24,8 @@ namespace uchebnaya.Components
         public string spec_id { get; set; }
         public string student_name { get; set; }
     
-        public virtual specialization specialization { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ExamStudent> ExamStudent { get; set; }
+        public virtual specialization specialization { get; set; }
     }
 }

@@ -14,7 +14,8 @@ namespace uchebnaya
     /// </summary>
     public partial class App : Application
     {
-        public static shamaev322_uchebnayaEntities db = new shamaev322_uchebnayaEntities();
+        //public static shamaev322_uchebnayaEntities db = new shamaev322_uchebnayaEntities();
+        public static uchebnaya_homeEntities db = new uchebnaya_homeEntities();
         public static MainWindow mainWindow;
         public static bool IsPageEnable = false;
     }
